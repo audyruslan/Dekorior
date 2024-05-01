@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Jasa Desain Interior, Kitchen Set & Lemari Custom | dekorrior.com</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/templatemo-villa-agency.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- ***** Logo Start ***** -->
+              <a href="index.html" class="logo">
+                <h1>Dekorrior</h1>
+              </a>
+              <!-- ***** Logo End ***** -->
+              <!-- ***** Menu Start ***** -->
+              <ul class="nav">
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="properties.html">Cara Kerja</a></li>
+                <li><a href="property-details.html">Portfolio</a></li>
+                <li><a href="contact.html">Area Jangkauan</a></li>
+                <li>
+                  <a href="#"><i class="fa fa-calendar"></i> Studio untuk Desainer</a>
+                </li>
+              </ul>
+              <a class="menu-trigger">
+                <span>Menu</span>
+              </a>
+              <!-- ***** Menu End ***** -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <form id="formKirim">
+        <div class="contact-page section mt-4">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 offset-md-2 col-sm-12">
+                <h2 class="text-center">
+                  Jadwalkan Konsultasi Interior Kamu Dengan Desainer Profesional
+                  Rancang Interior Sekarang!
+                </h2>
+                <p class="text-muted mt-2 text-center">
+                  Isi data dan tim Rancang Interior Desain Interior akan merespon
+                  dalam 2x24 jam untuk mewujudkan rumah impian Anda!
+                </p>
+                
+                <!-- Detail Interior -->
+                <div class="row">
+                  <h2 class="mb-3">Detail Interior</h2>
+                  <p style="margin-bottom:10px;">Tipe Properti :</p>
+                  <div class="col-md-6 col-6">
+                    <div class="card custom-card custom-card-interior" id="Rumah" onclick="toggleCardProperty('Rumah')">
+                      <div class="card-body">
+                        <h5 class="card-text text-center p-2">Rumah</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-6">
+                    <div class="card custom-card custom-card-interior" id="Apartemen" onclick="toggleCardProperty('Apartemen')">
+                      <div class="card-body">
+                        <h5 class="card-title text-center p-1">Apartemen</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <p><strong>Mau desain interior untuk keperluan bisnismu?</strong> <a class="text-success" href=""><strong>Klik di sini</strong></a></p>
+                </div>
+
+                <!-- Tipe Interior -->
+                <div class="row" style="margin-top:-30px;">
+                  <p style="margin-bottom:10px;">Tipe Interior</p>
+                  <div class="col-md-6 col-6">
+                    <div class="card custom-card custom-card-property" id="Desain Interior" onclick="toggleCardInterior('Desain Interior')">
+                      <div class="card-body">
+                        <h5 class="card-text text-center p-2">Desain Interior</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-6">
+                    <div class="card custom-card custom-card-property" id="Kitchen Set" onclick="toggleCardInterior('Kitchen Set')">
+                      <div class="card-body">
+                        <h5 class="card-title text-center p-1">Kitchen Set</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mt-4">
+                    <label for="jumlah_ruangan">Jumlah Ruangan yang Ingin Didesain</label>
+                    <select class="form-control" name="jumlah_ruangan" id="jumlah_ruangan">
+                      <option value="">--Pilih Ruangan--</option>
+                      <option>1 Ruangan</option>
+                      <option>2 Ruangan</option>
+                      <option>3 Ruangan</option>
+                      <option>4 Ruangan</option>
+                      <option>5 Ruangan</option>
+                      <option>Lebih dari 5 Ruangan</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row mt-5">
+                  <h2 class="mb-4">
+                    Informasi Kontak
+                  </h2>
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <label for="nama_lengkap">Nama Lengkap</label>
+                      <input type="text" name="nama_lengkap" class="form-control" id="nama_lengkap" placeholder="Misalkan, Audy Ruslan" autocomplete="on"
+                        required />
+                    </div>
+                    <div class="mb-3">
+                      <label for="no_hp">No. Telepon (Terdaftar di Whatsapp)</label>
+                      <input type="number" name="no_hp" class="form-control" id="no_hp" placeholder="082259708665" autocomplete="on" required />
+                    </div>
+                    <div class="mb-3">
+                      <label for="email">Email (Optional)</label>
+                      <input type="email" name="email" class="form-control" id="email" placeholder="Misalkan, contoh@gmail.com"
+                        autocomplete="on" required />
+                    </div>
+                  </div>
+                </div>
+
+              <div class="row mt-5">
+                <h2>
+                  Informasi Alamat
+                </h2>
+                <p style="margin-bottom:20px;">Lengkapi dengan alamat proyek yang akan didesain.</p>
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <label for="provinsi">Pilih Provinsi</label>
+                      <select class="form-control" name="provinsi" id="provinsi">
+                        <option value="">--Silahkan Pilih--</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="kota">Pilih Kabupaten/Kota</label>
+                      <select class="form-control" name="kota" id="kota">
+                        <option value="">--Silahkan Pilih--</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="kecamatan">Pilih Kecamatan</label>
+                      <select class="form-control" name="kecamatan" id="kecamatan">
+                        <option value="">--Silahkan Pilih--</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="kelurahan">Pilih Kelurahan/Desa</label>
+                      <select class="form-control" name="kelurahan" id="kelurahan">
+                        <option value="">--Silahkan Pilih--</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="alamat_lengkap">Alamat Lengkap</label>
+                      <textarea class="form-control" name="alamat_lengkap" id="alamat_lengkap" rows="3"
+                        placeholder="Lengkapi dengan Nomor Rumah atau RT/RW...."></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="catatan_tambahan">Catatan Tambahan</label>
+                      <textarea class="form-control" name="catatan_tambahan" id="catatan_tambahan"
+                        placeholder="Apakah ada hal lain yang dapat kami ketahui demi pelayanan terbaik bagi Anda?"></textarea>
+                    </div>
+                    <div class="form-check mt-3">
+                      <input type="checkbox" class="form-check-input" name="syarat_ketentuan" id="syarat_ketentuan">
+                      <label class="form-check-label" for="syarat_ketentuan">Dengan mencentang ini Anda menyetujui Syarat dan Ketentuan yang
+                        dibuat oleh Dekoruma.</label>
+                    </div>
+                    <div class="d-grid gap-2 mt-3">
+                      <button class="btn btn-dark" name="kirim" type="button">Tanya Harga</button>
+                    </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
+    <footer class="mt-5">
+      <div class="container">
+        <div class="col-lg-12">
+          <p>
+            Copyright © 2024 build by dekorrior.com
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const provinsiSelect = document.getElementById('provinsi');
+        const kotaSelect = document.getElementById('kota');
+        const kecamatanSelect = document.getElementById('kecamatan');
+        const kelurahanSelect = document.getElementById('kelurahan');
+        const apiKey = 'a004dce5-554e-53dc-ab39-68e67794'; // API KEY GoAPI
+        
+        fetch('https://api.goapi.io/regional/provinsi', {
+          headers: {
+            'x-api-key': apiKey
+          }
+        })
+          .then(response => response.json())
+          .then(data => {
+            data.data.forEach(provinsi => {
+              const option = document.createElement('option');
+              option.value = provinsi.name;
+              option.textContent = provinsi.name;
+              option.dataset.provinsiId = provinsi.id;
+              provinsiSelect.appendChild(option);
+            });
+          })
+          .catch(error => {
+            console.error('Error fetching provinsi data:', error);
+          });
+
+        provinsiSelect.addEventListener('change', function () {
+          const selectedOption = provinsiSelect.options[provinsiSelect.selectedIndex];
+          const selectedProvinsiId = selectedOption.dataset.provinsiId;
+
+          while (kotaSelect.firstChild) {
+            kotaSelect.removeChild(kotaSelect.firstChild);
+          }
+          while (kecamatanSelect.firstChild) {
+            kecamatanSelect.removeChild(kecamatanSelect.firstChild);
+          }
+          while (kelurahanSelect.firstChild) {
+            kelurahanSelect.removeChild(kelurahanSelect.firstChild);
+          }
+
+          fetch(`https://api.goapi.io/regional/kota?provinsi_id=${selectedProvinsiId}`, {
+            headers: {
+              'x-api-key': apiKey
+            }
+          })
+            .then(response => response.json())
+            .then(data => {
+              data.data.forEach(kota => {
+                const option = document.createElement('option');
+                option.value = kota.name;
+                option.textContent = kota.name;
+                option.dataset.kotaId = kota.id;
+                kotaSelect.appendChild(option);
+              });
+            })
+            .catch(error => {
+              console.error('Error fetching kota data:', error);
+            });
+        });
+
+        kotaSelect.addEventListener('change', function () {
+          const selectedOption = kotaSelect.options[kotaSelect.selectedIndex];
+          const selectedKotaId = selectedOption.dataset.kotaId;
+
+          while (kecamatanSelect.firstChild) {
+            kecamatanSelect.removeChild(kecamatanSelect.firstChild);
+          }
+          while (kelurahanSelect.firstChild) {
+            kelurahanSelect.removeChild(kelurahanSelect.firstChild);
+          }
+
+          fetch(`https://api.goapi.io/regional/kecamatan?kota_id=${selectedKotaId}`, {
+            headers: {
+              'x-api-key': apiKey
+            }
+          })
+            .then(response => response.json())
+            .then(data => {
+              data.data.forEach(kecamatan => {
+                const option = document.createElement('option');
+                option.value = kecamatan.name;
+                option.textContent = kecamatan.name;
+                option.dataset.kecamatanId = kecamatan.id;
+                kecamatanSelect.appendChild(option);
+              });
+            })
+            .catch(error => {
+              console.error('Error fetching kecamatan data:', error);
+            });
+        });
+
+        kecamatanSelect.addEventListener('change', function () {
+          const selectedOption = kecamatanSelect.options[kecamatanSelect.selectedIndex];
+          const selectedKecamatanId = selectedOption.dataset.kecamatanId;
+
+          while (kelurahanSelect.firstChild) {
+            kelurahanSelect.removeChild(kelurahanSelect.firstChild);
+          }
+
+          fetch(`https://api.goapi.io/regional/kelurahan?kecamatan_id=${selectedKecamatanId}`, {
+            headers: {
+              'x-api-key': apiKey
+            }
+          })
+            .then(response => response.json())
+            .then(data => {
+              data.data.forEach(kelurahan => {
+                const option = document.createElement('option');
+                option.value = kelurahan.name;
+                option.textContent = kelurahan.name;
+                kelurahanSelect.appendChild(option);
+              });
+            })
+            .catch(error => {
+              console.error('Error fetching kelurahan data:', error);
+            });
+        });
+      });
+    </script>
+
+
+    <!-- Scripts -->
+    <script>
+      // Tipe Properti
+      var selectedProperty = '';
+        function toggleCardProperty(cardId) {
+          var card = document.getElementById(cardId);
+          var otherCardId = (cardId === 'Rumah') ? 'Apartemen' : 'Rumah';
+          var otherCard = document.getElementById(otherCardId);
+
+          if (card.classList.contains('selected')) {
+            card.classList.remove('selected');
+            selectedProperty = '';
+          } else {
+            card.classList.add('selected');
+            selectedProperty = cardId;
+          }
+
+          otherCard.classList.remove('selected');
+        }
+
+      // Tipe Interior
+      function toggleCardInterior(cardId) {
+        var card = document.getElementById(cardId);
+        var otherCardId = (cardId === 'Desain Interior') ? 'Kitchen Set' : 'Desain Interior';
+        var otherCard = document.getElementById(otherCardId);
+
+        if (card.classList.contains('selected')) {
+          card.classList.remove('selected');
+        } else {
+          card.classList.add('selected');
+        }
+
+        otherCard.classList.remove('selected');
+      }
+    </script>
+
+   <script>
+    document.querySelector('button[name="kirim"]').addEventListener('click', function () {
+      var tipeInteriorElement = document.querySelector('.custom-card-interior.active');
+      var tipeInterior = tipeInteriorElement ? tipeInteriorElement.id : '';
+
+      var jumlahRuangan = document.getElementById('jumlah_ruangan').value;
+      var namaLengkap = document.getElementById('nama_lengkap').value;
+      var noHp = document.getElementById('no_hp').value;
+      var email = document.getElementById('email').value;
+      var provinsi = document.getElementById('provinsi').value;
+      var kota = document.getElementById('kota').value;
+      var kecamatan = document.getElementById('kecamatan').value;
+      var kelurahan = document.getElementById('kelurahan').value;
+      var alamatLengkap = document.getElementById('alamat_lengkap').value;
+      var catatanTambahan = document.getElementById('catatan_tambahan').value;
+      var syaratKetentuan = document.getElementById('syarat_ketentuan').checked;
+
+      if (!syaratKetentuan) {
+        alert('Anda harus menyetujui syarat dan ketentuan');
+        return;
+      }
+
+      // Mengirim pesan ke WhatsApp
+      var message = `Tipe Interior: ${tipeInterior}%0A`
+        + `Jumlah Ruangan: ${jumlahRuangan}%0A`
+        + `Nama Lengkap: ${namaLengkap}%0A`
+        + `No. Telepon: ${noHp}%0A`
+        + `Email: ${email}%0A`
+        + `Provinsi: ${provinsi}%0A`
+        + `Kota: ${kota}%0A`
+        + `Kecamatan: ${kecamatan}%0A`
+        + `Kelurahan: ${kelurahan}%0A`
+        + `Alamat Lengkap: ${alamatLengkap}%0A`
+        + `Catatan Tambahan: ${catatanTambahan}%0A`;
+
+      var whatsappLink = `https://wa.me/6282259708665?text=${encodeURIComponent(message)}`;
+
+      // Buka link WhatsApp di tab baru
+      window.open(whatsappLink, '_blank');
+    });
+  </script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/counter.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>
