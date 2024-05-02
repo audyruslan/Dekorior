@@ -6,3 +6,21 @@ transition: all 0.3s ease;
 background-color: #E5F7F8;
 border: 2px solid #008188;
 }
+
+ .card {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     text-align: center;
+     height: 100%;
+ }
+
+ .card-img-top {
+     height: 100%;
+     width: auto;
+     object-fit: cover;
+ }
+
+ .card-body {
+     flex-grow: 1;
+ }
