@@ -1,10 +1,10 @@
 .custom-card {
-border: 2px solid #008188;
+border: 2px solid #B58A42;
 transition: all 0.3s ease;
 }
 .selected {
-background-color: #E5F7F8;
-border: 2px solid #008188;
+background-color: #f5dfb7;
+border: 2px solid #B58A42;
 }
 
  .card {
