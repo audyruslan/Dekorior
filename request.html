@@ -96,12 +96,12 @@
                   </div>
                 </div>
               </div>
-              <p><strong>Mau desain interior untuk keperluan bisnismu?</strong> <a class="text-success"
-                  href=""><strong>Klik di sini</strong></a></p>
+              <!-- <p><strong>Mau desain interior untuk keperluan bisnismu?</strong> <a class="text-success"
+                  href=""><strong>Klik di sini</strong></a></p> -->
             </div>
 
             <!-- Tipe Interior -->
-            <div class="row" style="margin-top:-30px;">
+            <div class="row mt-3" style="margin-top:-30px;">
               <p style="margin-bottom:10px;">Tipe Interior</p>
               <div class="col-md-6 col-6">
                 <div class="card custom-card custom-card-property" id="Desain Interior"
@@ -121,7 +121,7 @@
               </div>
               <div class="form-group mt-4">
                 <label for="jumlah_ruangan">Jumlah Ruangan yang Ingin Didesain</label>
-                <select class="form-control" name="jumlah_ruangan" id="jumlah_ruangan">
+                <select class="form-control" name="jumlah_ruangan" id="jumlah_ruangan" required>
                   <option value="">--Pilih Ruangan--</option>
                   <option>1 Ruangan</option>
                   <option>2 Ruangan</option>
@@ -164,40 +164,42 @@
               <div class="col-md-12">
                 <div class="mb-3">
                   <label for="provinsi">Pilih Provinsi</label>
-                  <select class="form-control" name="provinsi" id="provinsi">
+                  <select class="form-control" name="provinsi" id="provinsi" required>
                     <option value="">--Silahkan Pilih--</option>
                   </select>
                 </div>
                 <div class="mb-3">
                   <label for="kota">Pilih Kabupaten/Kota</label>
-                  <select class="form-control" name="kota" id="kota">
+                  <select class="form-control" name="kota" id="kota" required>
                     <option value="">--Silahkan Pilih--</option>
                   </select>
                 </div>
                 <div class="mb-3">
                   <label for="kecamatan">Pilih Kecamatan</label>
-                  <select class="form-control" name="kecamatan" id="kecamatan">
+                  <select class="form-control" name="kecamatan" id="kecamatan" required>
                     <option value="">--Silahkan Pilih--</option>
                   </select>
                 </div>
                 <div class="mb-3">
                   <label for="kelurahan">Pilih Kelurahan/Desa</label>
-                  <select class="form-control" name="kelurahan" id="kelurahan">
+                  <select class="form-control" name="kelurahan" id="kelurahan" required>
                     <option value="">--Silahkan Pilih--</option>
                   </select>
                 </div>
                 <div class="mb-3">
                   <label for="alamat_lengkap">Alamat Lengkap</label>
                   <textarea class="form-control" name="alamat_lengkap" id="alamat_lengkap" rows="3"
-                    placeholder="Lengkapi dengan Nomor Rumah atau RT/RW...."></textarea>
+                    placeholder="Lengkapi dengan Nomor Rumah atau RT/RW...." required></textarea>
                 </div>
                 <div class="form-group">
                   <label for="catatan_tambahan">Catatan Tambahan</label>
                   <textarea class="form-control" name="catatan_tambahan" id="catatan_tambahan"
-                    placeholder="Apakah ada hal lain yang dapat kami ketahui demi pelayanan terbaik bagi Anda?"></textarea>
+                    placeholder="Apakah ada hal lain yang dapat kami ketahui demi pelayanan terbaik bagi Anda?"
+                    required></textarea>
                 </div>
                 <div class="form-check mt-3">
-                  <input type="checkbox" class="form-check-input" name="syarat_ketentuan" id="syarat_ketentuan">
+                  <input type="checkbox" class="form-check-input" name="syarat_ketentuan" id="syarat_ketentuan"
+                    required>
                   <label class="form-check-label" for="syarat_ketentuan">Dengan mencentang ini Anda menyetujui Syarat
                     dan Ketentuan yang
                     dibuat oleh Dekoruma.</label>
@@ -223,17 +225,15 @@
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        let params = new URLSearchParams(window.location.search);
-        let nama = params.get('nama_lengkap');
-        let no_hp = params.get('no_hp');
-        let email = params.get('email');
+    // Get form values from localStorage
+    var nama_lengkap = localStorage.getItem("nama_lengkap");
+    var no_hp = localStorage.getItem("no_hp");
+    var email = localStorage.getItem("email");
 
-        document.getElementById('nama_lengkap').value = nama;
-        document.getElementById('no_hp').value = no_hp;
-        document.getElementById('email').value = email;
-      });
-
+    // Display form values
+    document.getElementById("nama_lengkap").value = nama_lengkap;
+    document.getElementById("no_hp").value = no_hp;
+    document.getElementById("email").value = email;
   </script>
 
   <script>
@@ -379,6 +379,7 @@
     }
 
     // Tipe Interior
+    var selectedInterior = '';
     function toggleCardInterior(cardId) {
       var card = document.getElementById(cardId);
       var otherCardId = (cardId === 'Desain Interior') ? 'Kitchen Set' : 'Desain Interior';
@@ -386,8 +387,10 @@
 
       if (card.classList.contains('selected')) {
         card.classList.remove('selected');
+        selectedInterior = '';
       } else {
         card.classList.add('selected');
+        selectedInterior = cardId;
       }
 
       otherCard.classList.remove('selected');
@@ -395,9 +398,16 @@
   </script>
 
   <script>
+    // Menonaktifkan tombol "Tanya Harga" secara default
+    document.querySelector('button[name="kirim"]').disabled = true;
+
+    // Event listener untuk checkbox syarat dan ketentuan
+    document.getElementById('syarat_ketentuan').addEventListener('change', function () {
+      var button = document.querySelector('button[name="kirim"]');
+      button.disabled = !this.checked;
+    });
+
     document.querySelector('button[name="kirim"]').addEventListener('click', function () {
-      var tipeInteriorElement = document.querySelector('.custom-card-interior.active');
-      var tipeInterior = tipeInteriorElement ? tipeInteriorElement.id : '';
 
       var jumlahRuangan = document.getElementById('jumlah_ruangan').value;
       var namaLengkap = document.getElementById('nama_lengkap').value;
@@ -411,13 +421,27 @@
       var catatanTambahan = document.getElementById('catatan_tambahan').value;
       var syaratKetentuan = document.getElementById('syarat_ketentuan').checked;
 
+      // Validasi selectedProperty dan selectedInterior
+      if (!selectedProperty || !selectedInterior) {
+        alert('Silahkan Pilih Salah Satu Tipe Properti & Tipe Interior');
+        return;
+      }
+
+      // Validasi form tidak boleh kosong
+      if (!jumlahRuangan || !namaLengkap || !noHp || !email || !provinsi || !kota || !kecamatan || !kelurahan || !alamatLengkap || !syaratKetentuan) {
+        alert('Mohon lengkapi semua form');
+        return;
+      }
+
+      // Validasi syarat dan ketentuan harus dicentang
       if (!syaratKetentuan) {
         alert('Anda harus menyetujui syarat dan ketentuan');
         return;
       }
 
       // Mengirim pesan ke WhatsApp
-      var message = `Tipe Interior: ${tipeInterior}%0A`
+      var message = `Tipe Properti: ${selectedProperty}%0A`
+        + `Tipe Interior: ${selectedInterior}%0A`
         + `Jumlah Ruangan: ${jumlahRuangan}%0A`
         + `Nama Lengkap: ${namaLengkap}%0A`
         + `No. Telepon: ${noHp}%0A`
