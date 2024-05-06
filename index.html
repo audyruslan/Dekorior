@@ -35,6 +35,26 @@
     .progress-bar-end {
       background-color: #B58A42;
     }
+
+    .card-img-top {
+      object-fit: cover;
+      height: 200px; /* Atur tinggi gambar sesuai kebutuhan */
+      width: 100%;
+    }
+
+    /* CSS untuk tampilan desktop */
+    .kartu h5 {
+        font-size: 1.25rem; /* Ukuran teks untuk desktop */
+        line-height: inherit;
+    }
+
+    /* CSS untuk tampilan mobile */
+    @media (max-width: 767px) {
+        .kartu h5 {
+            font-size: 0.80rem; /* Ukuran teks untuk mobile */
+        }
+    }
+
   </style>
 </head>
 
@@ -95,7 +115,7 @@
         <div class="col-lg-12">
           <div class="kartu p-5">
             <span class="tombol"><a href="#konsultasi"> Konsultasi</a></span>
-            <h5>Kami Wujudkan Properti Impian Anda</h5>
+            <h5>Rancang Interior Kamu Sekarang<br> Kami Akan Bantu Kamu Mendapatkan <br> Desain Interior yang Sesuai Karaktermu</h5>
           </div>
         </div>
       </div>
@@ -161,7 +181,7 @@
       <div class="row">
         <div class="col-md-4">
           <div class="card">
-            <img src="assets/images/kitchen-set.jpg" class="card-img-top" alt="image">
+            <img src="assets/images/kitchen-set.jpg" class="card-img-top img-fluid" alt="image">
             <div class="card-body">
               <h4 class="card-title text-start">Kitchen Set</h4>
               <p class="card-text text-start">Desain dapur modern dengan kualitas premium.
@@ -171,7 +191,7 @@
         </div>
         <div class="col-md-4">
           <div class="card">
-            <img src="assets/images/rumah.png" class="card-img-top" alt="image">
+            <img src="assets/images/rumah.png" class="card-img-top img-fluid" alt="image">
             <div class="card-body">
               <h4 class="card-title text-start">Rumah</h4>
               <p class="card-text text-start">Interior berkualitas untuk rumah estetik dan nyaman.
@@ -181,17 +201,19 @@
         </div>
         <div class="col-md-4">
           <div class="card">
-            <img src="assets/images/apartemen.jpg" class="card-img-top" alt="image">
+            <img src="assets/images/apartemen.jpg" class="card-img-top img-fluid" alt="image">
             <div class="card-body">
               <h4 class="card-title text-start">Apartemen</h4>
-              <p class="card-text text-start">Desain yang membuat ruangan leluasa untuk beraktivitas.
+              <p class="card-text text-start">Desain yang membuat ruangan leluasa beraktivitas.
               </p>
             </div>
           </div>
         </div>
+      </div>
+      <div class="row mt-4">
         <div class="col-md-4">
           <div class="card">
-            <img src="assets/images/lemari-custom.jpg" class="card-img-top" alt="image">
+            <img src="assets/images/lemari-custom.jpg" class="card-img-top img-fluid" alt="image">
             <div class="card-body">
               <h4 class="card-title text-start">Lemari Custom</h4>
               <p class="card-text text-start">Personalisasi penyimpanan sesuai dengan kebutuhanmu.
@@ -201,7 +223,7 @@
         </div>
         <div class="col-md-4">
           <div class="card">
-            <img src="assets/images/kantor.jpeg" class="card-img-top" alt="image">
+            <img src="assets/images/kantor.jpeg" class="card-img-top img-fluid" alt="image">
             <div class="card-body">
               <h4 class="card-title text-start">Kantor</h4>
               <p class="card-text text-start">Tingkatkan performa bisnismu dengan interior kantir kreatif yang papas
@@ -213,7 +235,7 @@
         </div>
         <div class="col-md-4">
           <div class="card">
-            <img src="assets/images/hotel.jpeg" class="card-img-top" alt="image">
+            <img src="assets/images/hotel.jpeg" class="card-img-top img-fluid" alt="image">
             <div class="card-body">
               <h4 class="card-title text-start">Hotel</h4>
               <p class="card-text text-start">Berikan pengalaman terbaik untuk customermu dan raih kesuksesan bisnis.
