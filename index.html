@@ -55,6 +55,27 @@
         }
     }
 
+  .circleNumber {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #d8c8a9;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 14px; /* ukuran teks */
+    color: #333; /* warna teks */
+  }
+
+  .circleNumber.active {
+    background-color: #B58A42; /* warna aktif */
+    color: white; /* warna teks aktif */
+  }
+
+
+
   </style>
 </head>
 
@@ -299,6 +320,16 @@
     <div class="container">
       <div class="row mt-5">
         <h1 class="text-center mb-5">6 Langkah Menuju Interior Impianmu</h1>
+
+        <div class="text-center mt-3" id="circleNumbers">
+          <span class="circleNumber active">1</span>
+          <span class="circleNumber">2</span>
+          <span class="circleNumber">3</span>
+          <span class="circleNumber">4</span>
+          <span class="circleNumber">5</span>
+          <span class="circleNumber">6</span>
+        </div>
+
 
         <!-- Carousel -->
         <div id="carouselExampleAutoplaying" class="carousel slide mt-5" data-bs-ride="carousel">
@@ -852,7 +883,7 @@
   </script>
 
   <script>
-    $(document).ready(function () {
+   $(document).ready(function () {
       // Sembunyikan semua judul-step kecuali yang pertama
       $(".judul-step-1").show();
       $(".judul-step-2, .judul-step-3, .judul-step-4, .judul-step-5, .judul-step-6").hide();
@@ -906,10 +937,35 @@
           $(".progress-bar").removeClass("progress-bar-gratis").addClass("progress-bar-end");
         }
       });
+
+      // Ambil semua circle number
+      const circleNumbers = document.querySelectorAll('.circleNumber');
+
+      // Event saat carousel slide berubah
+      document.getElementById('carouselExampleAutoplaying').addEventListener('slid.bs.carousel', function (event) {
+        // Ambil index slide yang aktif
+        const index = event.to;
+
+        // Hapus kelas active dari semua circle number
+        circleNumbers.forEach((circle, i) => {
+          circle.classList.remove('active');
+
+          // Tambahkan kelas active pada circle number yang sesuai dengan slide aktif
+          if (i === index) {
+            circle.classList.add('active');
+          }
+        });
+      });
+
+      // Event saat circle number di-klik
+      circleNumbers.forEach((circle, i) => {
+        circle.addEventListener('click', () => {
+          $('#carouselExampleAutoplaying').carousel(i); // Pindahkan carousel ke index i
+        });
+      });
     });
+
   </script>
-
-
 </body>
 
 </html>
