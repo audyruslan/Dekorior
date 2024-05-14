@@ -399,28 +399,22 @@ Header Style
 .header-area .main-nav {
   background: transparent;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.header-area .main-nav .logo {
+.header-area .main-nav .logo img {
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  display: inline-block;
+  display: flex;
+  max-width: 200px;
+  height: auto;
+  align-items: center;
+  margin-top: -30px;
 }
 
-.header-area .main-nav .logo h1 {
-  line-height: 100px;
-  font-size: 28px;
-  text-transform: uppercase;
-  color: #1e1e1e;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.background-header .main-nav .logo h1 {
-  line-height: 80px;
-}
 
 .header-area .main-nav ul.nav {
   flex-basis: 100%;
@@ -430,8 +424,6 @@ Header Style
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  position: relative;
-  z-index: 999;
 }
 
 .header-area .main-nav .nav li:last-child {
@@ -655,10 +647,12 @@ Header Style
     height: auto;
     flex-basis: 100%;
   }
-  .header-area .main-nav .logo {
+  .header-area .main-nav .logo img {
     position: absolute;
     left: 30px;
     top: 0px;
+    max-width: 120px;
+    margin-top: 20px;
   }
   .background-header .main-nav .logo {
     top: 0px;
